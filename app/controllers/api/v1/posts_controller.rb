@@ -1,5 +1,5 @@
 class Api::V1::PostsController < Api::V1::BaseController
-  before_action :set_post, only: [ :show, :update ]
+  before_action :set_post, only: [ :show, :update, :destroy ]
 
   def index
     @posts = Post.all
@@ -11,6 +11,23 @@ class Api::V1::PostsController < Api::V1::BaseController
   def update
     if @post.update(post_params)
       render :show
+    else
+      render_error
+    end
+  end
+
+  def create
+    @post = Post.new(post_params)
+    if @post.save
+      render :show
+    else
+      render_error
+    end
+  end
+
+  def destroy
+    if @post.destroy
+      head :no_content
     else
       render_error
     end
