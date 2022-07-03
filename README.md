@@ -77,11 +77,12 @@ COMMENTS
         value: application/json
 
 Running locally:
-  1. bundle install
-  2. rails db:create
-  3. rails db:migrate
-  4. rails s # to run on localhost:3000
-  5. API lives in /api/v1
+   
+    bundle install
+    rails db:create
+    rails db:migrate
+    rails s # to run on localhost:3000
+    # API lives in /api/v1
  
  Testing:
    
