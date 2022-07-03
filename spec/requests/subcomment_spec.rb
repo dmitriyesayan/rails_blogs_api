@@ -41,6 +41,13 @@ describe 'SUBCOMMENTS API', type: :request do
 
       expect(response).to have_http_status(:success)
     end
+
+    it 'create a new subcomment with blank content fails' do
+
+      post "/api/v1/posts/#{post_renamed.id}/comments/#{comment.id}/subcomments", params: { subcomment: { content: ""}}
+
+      expect(response).to have_http_status(:unprocessable_entity)
+    end
   end
 
   describe 'PATCH /posts/:id/comments/:id/subcomments/:id' do

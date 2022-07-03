@@ -36,6 +36,13 @@ describe 'POSTS API', type: :request do
 
       expect(response).to have_http_status(:success)
     end
+
+    it 'create a new post with blank content fails' do
+
+      post '/api/v1/posts', params: { post: { content: ""}}
+
+      expect(response).to have_http_status(:unprocessable_entity)
+    end
   end
 
   describe 'PATCH /posts/:id' do
@@ -53,6 +60,8 @@ describe 'POSTS API', type: :request do
 
   describe 'DELETE /posts/:id' do
     let!(:post) { FactoryBot.create(:post, content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.") }
+    let!(:comment) { FactoryBot.create(:comment, content: "Etiam sodales commodo dui, sit amet ullamcorper nisi finibus vel.", post_id: post.id) }
+    let!(:subcomment) { FactoryBot.create(:subcomment, content: "Vestibulum faucibus ex tellus, in dapibus diam sagittis eu. Sed.", comment_id: comment.id) }
 
     it 'delete a post' do
       expect {
@@ -60,7 +69,13 @@ describe 'POSTS API', type: :request do
     }.to change { Post.count }.from(1).to(0)
 
       expect(response).to have_http_status(:no_content)
+    end
 
+    it 'deleting a post deletes all the child comments and subcomments' do
+      delete "/api/v1/posts/#{post.id}"
+
+      expect(Comment.find_by(post_id: post.id)).not_to be_present
+      expect(Subcomment.find_by(comment_id: comment.id)).not_to be_present
     end
   end
 
