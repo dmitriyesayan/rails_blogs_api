@@ -53,6 +53,7 @@ COMMENTS
         value: application/json
        Body format (raw):
         { "comment": { "content": "new comment" } }
+        
    PATCH a comment
        
        https://rails-blog-api11.herokuapp.com/api/v1/posts/:id/comments/:id
@@ -62,6 +63,7 @@ COMMENTS
         value: application/json
        Body format (raw):
         { "comment": { "content": "updated comment" } }
+        
    DELETE a comment
         
         https://rails-blog-api11.herokuapp.com/api/v1/posts/:id/comments/:id
@@ -71,6 +73,7 @@ COMMENTS
          value: application/json
  
  SUBCOMMENTS
+ 
    GET all subcomments
 
      https://rails-blog-api11.herokuapp.com/api/v1/posts/:id/comments/:id/subcomments
@@ -87,17 +90,15 @@ COMMENTS
       value: application/json
      Body format (raw):
       { "subcomment": { "content": "new subcomment" } }
+      
   PATCH a subcomment
     
     https://rails-blog-api11.herokuapp.com/api/v1/posts/:id/comments/:id/subcomments/:id
     
-   Header:
-    
+    Header:
     key: Content-Type
     value: application/json
-   
-   Body format (raw):
-    
+    Body format (raw):
     { "subcomment": { "content": "updated subcomment" } }
     
   DELETE a subcomment
@@ -106,7 +107,7 @@ COMMENTS
      
      Header:
      key: Content-Type
-        value: application/json
+     value: application/json
 
 Running locally:
    
