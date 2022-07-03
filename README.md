@@ -36,7 +36,8 @@ POSTS
         value: application/json
 
 COMMENTS
-    GET all comments
+
+   GET all comments
        
        https://rails-blog-api11.herokuapp.com/api/v1/posts/:id/comments
        
