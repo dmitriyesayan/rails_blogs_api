@@ -2,6 +2,7 @@ Blog API
 Deployed at https://rails-blog-api11.herokuapp.com/api/v1/
 
 POSTS
+
   GET all posts
     
     https://rails-blog-api11.herokuapp.com/api/v1/posts
