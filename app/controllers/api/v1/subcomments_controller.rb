@@ -1,6 +1,10 @@
 class Api::V1::SubcommentsController < Api::V1::BaseController
   before_action :set_subcomment, only: [ :show, :update, :destroy ]
 
+  def index
+    @subcomments = Subcomment.where(comment_id: params[:comment_id])
+  end
+
   def show
   end
 
@@ -35,7 +39,7 @@ class Api::V1::SubcommentsController < Api::V1::BaseController
   private
 
   def set_subcomment
-    @subcomment = Subcomment.find(params[:id])
+    @subcomment = Subcomment.find_by(comment_id: params[:comment_id], id: params[:id])
   end
 
   def subcomment_params

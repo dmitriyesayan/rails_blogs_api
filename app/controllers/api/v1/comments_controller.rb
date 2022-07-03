@@ -1,6 +1,10 @@
 class Api::V1::CommentsController < Api::V1::BaseController
   before_action :set_comment, only: [ :show, :update, :destroy ]
 
+  def index
+    @comments = Comment.where(post_id: params[:post_id])
+  end
+
   def show
   end
 
@@ -33,7 +37,7 @@ class Api::V1::CommentsController < Api::V1::BaseController
   private
 
   def set_comment
-    @comment = Comment.find(params[:id])
+    @comment = Comment.find_by(post_id: params[:post_id], id: params[:id])
   end
 
   def comment_params
