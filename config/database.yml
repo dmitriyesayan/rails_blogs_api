@@ -84,3 +84,4 @@ production:
   database: posts_api_production
   username: posts_api
   password: <%= ENV['POSTS_API_DATABASE_PASSWORD'] %>
+  url: <%= ENV['postgres://vqnateuccxqcce:b39d6996588c2018727ac651fd429146d14a2b6d69504878d2bfc9197928c45d@ec2-34-253-119-24.eu-west-1.compute.amazonaws.com:5432/d8c2iv47ifmjfp'] %>
