@@ -2,7 +2,7 @@ class Api::V1::PostsController < Api::V1::BaseController
   before_action :set_post, only: [ :show, :update, :destroy ]
 
   def index
-    @posts = Post.all
+    @posts = Post.order(position: :asc)
   end
 
   def show
