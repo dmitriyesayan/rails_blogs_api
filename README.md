@@ -5,13 +5,13 @@ POSTS
 
   GET all posts
     
-    https://rails-blog-api11.herokuapp.com/api/v1/posts
+    https://blogsapi.herokuapp.com/api/v1/posts
   GET a post
     
-    https://rails-blog-api11.herokuapp.com/api/v1/posts/:id
+    https://blogsapi.herokuapp.com/api/v1/posts/:id
   POST a post
     
-    https://rails-blog-api11.herokuapp.com/api/v1/posts
+    https://blogsapi.herokuapp.com/api/v1/posts
     
     Header:
       key: Content-Type
@@ -20,7 +20,7 @@ POSTS
       { "post": { "content": "new post" } }
    PATCH a post
     
-      https://rails-blog-api11.herokuapp.com/api/v1/posts/:id
+      https://blogsapi.herokuapp.com/api/v1/posts/:id
     
       Header:
         key: Content-Type
@@ -30,7 +30,7 @@ POSTS
   
   DELETE a post
      
-     https://rails-blog-api11.herokuapp.com/api/v1/posts/:id
+     https://blogsapi.herokuapp.com/api/v1/posts/:id
      
      Header:
         key: Content-Type
@@ -40,15 +40,15 @@ COMMENTS
 
    GET all comments
        
-       https://rails-blog-api11.herokuapp.com/api/v1/posts/:id/comments
+       https://blogsapi.herokuapp.com/api/v1/posts/:id/comments
        
    GET a commment
        
-       https://rails-blog-api11.herokuapp.com/api/v1/posts/:id/comments/:id
+       https://blogsapi.herokuapp.com/api/v1/posts/:id/comments/:id
    
    POST a comment
        
-       https://rails-blog-api11.herokuapp.com/api/v1/posts/:id/comments
+       https://blogsapi.herokuapp.com/api/v1/posts/:id/comments
        
        Header:
         key: Content-Type
@@ -58,7 +58,7 @@ COMMENTS
         
    PATCH a comment
        
-       https://rails-blog-api11.herokuapp.com/api/v1/posts/:id/comments/:id
+       https://blogsapi.herokuapp.com/api/v1/posts/:id/comments/:id
        
        Header:
         key: Content-Type
@@ -68,7 +68,7 @@ COMMENTS
         
    DELETE a comment
         
-        https://rails-blog-api11.herokuapp.com/api/v1/posts/:id/comments/:id
+        https://blogsapi.herokuapp.com/api/v1/posts/:id/comments/:id
         
         Header:
          key: Content-Type
@@ -78,14 +78,14 @@ COMMENTS
  
    GET all subcomments
 
-     https://rails-blog-api11.herokuapp.com/api/v1/posts/:id/comments/:id/subcomments
+     https://blogsapi.herokuapp.com/api/v1/posts/:id/comments/:id/subcomments
 
    GET a subcomment
 
-     https://rails-blog-api11.herokuapp.com/api/v1/posts/:id/comments/:id/subcomments/:id
+     https://blogsapi.herokuapp.com/api/v1/posts/:id/comments/:id/subcomments/:id
    POST a subcomment
 
-     https://rails-blog-api11.herokuapp.com/api/v1/posts/:id/comments/:id/subcomments
+     https://blogsapi.herokuapp.com/api/v1/posts/:id/comments/:id/subcomments
 
      Header:
       key: Content-Type
@@ -95,7 +95,7 @@ COMMENTS
       
   PATCH a subcomment
     
-    https://rails-blog-api11.herokuapp.com/api/v1/posts/:id/comments/:id/subcomments/:id
+    https://blogsapi.herokuapp.com/api/v1/posts/:id/comments/:id/subcomments/:id
     
     Header:
     key: Content-Type
@@ -105,7 +105,7 @@ COMMENTS
     
   DELETE a subcomment
    
-     https://rails-blog-api11.herokuapp.com/api/v1/posts/:id/comments/:id/subcomments/:id
+     https://blogsapi.herokuapp.com/api/v1/posts/:id/comments/:id/subcomments/:id
      
      Header:
      key: Content-Type
